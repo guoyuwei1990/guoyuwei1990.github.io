@@ -92,7 +92,7 @@ alpha = ('a', 'b', 'c'）
 ###### 只有count和index两种方法.
 ### 字典
 ###### key-value数据类型,是无序的,key必须是唯一的
-###### 其表现形式
+###### 其表现形式(字典还可以嵌套字典，列表)
 ```
 player = {'03':'Wade',
           '23':'James',
@@ -168,6 +168,7 @@ dict_items([('03', 'Wade'), ('23', 'Jordan'), ('30', 'Curry'), ('35', 'Durant'),
 11 Irving
 13 George
 0 Westbrook
+
 # 或者转化为列表后取值
 >>> for i,j in player.items():
         print (i,j)
@@ -178,4 +179,12 @@ dict_items([('03', 'Wade'), ('23', 'Jordan'), ('30', 'Curry'), ('35', 'Durant'),
 11 Irving
 13 George
 0 Westbrook
+```
+- 取值
+```
+player.values()
+```
+- 取序号
+```
+player.keys()
 ```
