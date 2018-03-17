@@ -188,3 +188,53 @@ player.values()
 ```
 player.keys()
 ```
+### 集合
+```
+>>> list_1 = set([1,2,4,5,3,4,3,6]) #创建集合
+>>> list_2 = set([1,6,8,7,97,423,4,5])
+>>> print(list_1)
+>>> print(list_2)
+{1, 2, 3, 4, 5, 6} #自动去重
+{1, 97, 4, 5, 6, 7, 8, 423}
+```
+- 常规操作
+```
+#并集 |
+>>> list_1.union(list_2)
+{1, 2, 3, 4, 5, 6, 7, 8, 97, 423}
+
+#交集 &
+>>> list_1.intersection(list_2)
+{1, 4, 5, 6}
+
+#子集，bool型
+>>> list_1.issubset(list_2)
+False
+
+#对称差集 ^ 
+>>> list_1.symmetric_difference(list_2) # 返回list_1和2中无交集的元素
+{2, 3, 7, 8, 97, 423}
+
+#差集difference - ,list1里有的，list2里没有的
+>>> list_1.difference(list_2)
+{2, 3}
+
+#添加一项
+>>> list_1.add(1234)
+>>> print(list_1)
+{1, 2, 3, 4, 5, 6, 1234}
+
+#添加多项
+>>> list_1.update([123,999])
+>>> print(list_1)
+{1, 2, 3, 4, 5, 6, 1234}
+
+#删除
+list_1.remove(123)
+
+#判断是否在集合里：
+x in s
+
+#判断不在集合里：
+x not in s
+```
