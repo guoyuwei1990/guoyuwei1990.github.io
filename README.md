@@ -139,4 +139,43 @@ player = {'03':'Wade',
  '23': 'Jordan',
  '30': 'Curry',
  '35': 'Durant'}
+ # 也可以用del player['02'] 
  ```
+- 查找
+```
+>>> '23' in player
+True
+
+>>> player.get('03')
+'Wade'
+# 同样
+>>> player['03']
+'Wade'
+```
+- 将字典里的元素转为列表
+```
+>>> player.items()
+dict_items([('03', 'Wade'), ('23', 'Jordan'), ('30', 'Curry'), ('35', 'Durant'), ('11', 'Irving'), ('13', 'George'), ('0', 'Westbrook')])
+```
+- 循环
+```
+>>> for i in player:
+       print(i, player[i])
+03 Wade
+23 Jordan
+30 Curry
+35 Durant
+11 Irving
+13 George
+0 Westbrook
+# 或者转化为列表后取值
+>>> for i,j in player.items():
+        print (i,j)
+03 Wade
+23 Jordan
+30 Curry
+35 Durant
+11 Irving
+13 George
+0 Westbrook
+```
