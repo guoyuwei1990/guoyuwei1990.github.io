@@ -90,4 +90,53 @@ alpha_copy = alpha.copy()
 alpha = ('a', 'b', 'c'）
 ```
 ###### 只有count和index两种方法.
-``` 
+### 字典
+###### key-value数据类型,是无序的,key必须是唯一的
+###### 其表现形式
+```
+player = {'03':'Wade',
+          '23':'James',
+          '02':'Ball',
+          '30':'Curry',
+          '35':'Durant',
+          '11':'Irving',
+          '13':'George'}
+```
+- 增加
+```
+>>> player['0']='Westbrook' 
+>>> player
+{'0': 'Westbrook',
+ '02': 'Ball',
+ '03': 'Wade',
+ '11': 'Irving',
+ '13': 'George',
+ '23': 'James',
+ '30': 'Curry',
+ '35': 'Durant'}
+ ```
+ - 修改
+```
+>>> player['23']='Jordan' 
+>>> player
+{'0': 'Westbrook',
+ '02': 'Ball',
+ '03': 'Wade',
+ '11': 'Irving',
+ '13': 'George',
+ '23': 'Jordan',
+ '30': 'Curry',
+ '35': 'Durant'}
+ ```
+ - 删除
+```
+>>> player.pop('02') #球哥被删除
+>>> player
+{'0': 'Westbrook',
+ '03': 'Wade',
+ '11': 'Irving',
+ '13': 'George',
+ '23': 'Jordan',
+ '30': 'Curry',
+ '35': 'Durant'}
+ ```
