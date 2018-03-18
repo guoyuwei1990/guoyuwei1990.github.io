@@ -263,4 +263,4 @@ info('kobe','#8')
 #返回结果为：
 kobe #8
 time for running info is 5.0067901611328125e-05
-
+```
