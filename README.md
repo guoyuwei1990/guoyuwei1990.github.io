@@ -295,5 +295,32 @@ time for running info is 5.0067901611328125e-05
 81
 ```
 - 函数生成器
-
-
+```javascript
+#斐波拉契数列（Fibonacci)
+def fib(i):
+  n,a,b=0,0,1
+  while n < i: 
+    a,b=b,a+b
+    print (b)
+    n=n+1
+fib (12)
+def fib(i):
+  n,a,b=0,0,1
+  while n < i: 
+    a,b=b,a+b
+    print (b)
+    n=n+1
+fib (12)
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+```
