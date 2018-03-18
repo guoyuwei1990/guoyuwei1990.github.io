@@ -240,4 +240,27 @@ x in s
 x not in s
 ```
 ### 装饰器
-###### 本质：高阶函数+嵌套数，其作用在不改变原函数代码和调用方式的前提下增加新功能
+###### 本质：高阶函数+嵌套函数，（嵌套函数的形参为要被修饰的函数，嵌套函数的形参为将被修饰函数的形参）
+###### 其作用是：在不改变原函数代码和调用方式的前提下增加新功能。
+···
+import  time
+
+def timer(func):
+    def deco(name,number):
+        s_time = time.time()
+        func(name, number)
+        e_time = time.time()
+        time_left = e_time - s_time
+        print("time for running info is %s" % time_left)
+    return deco #返回的为deco的内存地址，如果a = time(func),a()其实就是deco()
+
+@timer # 相当于info = timer(info)，所以运行info()就相当于运行deco()
+def info(name, number):
+    print (name, number)
+
+info('kobe','#8')
+
+#返回结果为：
+kobe #8
+time for running info is 5.0067901611328125e-05
+
