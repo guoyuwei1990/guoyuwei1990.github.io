@@ -2,6 +2,12 @@
 ### 列表
 - 定义列表
 > alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+- 列表生成
+```
+>>> a = [i+1 for i in range(10)]
+>>> a
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
 - 访问列表中的元素
 ```
 >>> alpha[0]
@@ -264,3 +270,30 @@ info('kobe','#8')
 kobe #8
 time for running info is 5.0067901611328125e-05
 ```
+###生成器
+- 创建一个generator
+```
+>>> (x*x for i in range(10))
+<generator object <genexpr> at 0x11192ba98>
+```
+- 打印生成器中的元素
+```javascript
+>>> g = (x*x for i in range(10))
+>>> next(g) #只能不断调用next(g)，直到计算到最后一个元素，提示StopIteration错误。
+0
+# 一般会使用for循环将其全部打印出来 
+>>> for i in g:
+        print(i)
+1
+4
+9
+16
+25
+36
+49
+64
+81
+```
+- 函数生成器
+
+
