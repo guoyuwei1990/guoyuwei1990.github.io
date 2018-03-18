@@ -270,7 +270,9 @@ info('kobe','#8')
 kobe #8
 time for running info is 5.0067901611328125e-05
 ```
-###生成器
+### 生成器
+###### 生成器是可以迭代的，但只可以读取它一次。因为用的时候才生成。
+
 - 创建一个generator
 ```
 >>> (x*x for i in range(10))
@@ -301,26 +303,25 @@ def fib(i):
   n,a,b=0,0,1
   while n < i: 
     a,b=b,a+b
-    print (b)
+    yield b  #print(b)改为yield b
     n=n+1
 fib (12)
-def fib(i):
-  n,a,b=0,0,1
-  while n < i: 
-    a,b=b,a+b
-    print (b)
-    n=n+1
-fib (12)
+#返回结果
+<generator object fib at 0x11193c258>
+```
+- 调用方式 next()
+```
+f = fib(12)
+# 遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。
+print(f.__next__())
+print(f.__next__())
+print("any thing")
+print(f.__next__())
+print(f.__next__())
+
 1
 2
+any thing
 3
 5
-8
-13
-21
-34
-55
-89
-144
-233
 ```
