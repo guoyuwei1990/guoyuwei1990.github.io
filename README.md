@@ -326,6 +326,7 @@ any thing
 5
 ```
 ###模块
+######模块分为三种：自定义模块,内置标准模块（又称标准库）,开源模块
 -time模块
 ```
 1. time.time()# 时间戳，当前时间减去1970年1月1日，并换算为秒
@@ -372,4 +373,39 @@ for i in range(4):
     verify_code+=str(temp)
 
 print(verify_code)
+```
+- os模块
+```
+1. os.getcwd() #获取当前python脚本工作的目录路径
+'/Users/susanguo/Documents'
+
+2. os.chdir('/Users/susanguo') #更改当前路径致/Users/susanguo
+
+3. os.curdir  #返回当前目录: ('.')
+
+4. os.makedirs('dirname1/dirname2')  #生成多层递归目录
+
+5. s.removedirs('dirname1') #若目录为空，则删除，并递归到上一级目录，若也为空，接着删除，依此类推。可以用来清理空文件夹。
+
+6. os.mkdir('dirname') #生成单级目录
+
+7. os.rmdir('dirname') #删除单级空目录
+
+8. os.listdir('dirname') #列出指定目录下的所有文件和子目录，包括隐藏文件，以列表方式打印
+
+9. os.rename("oldname","newname") #重命名文件/目录
+
+10. os.sep  #操作系统的路径分隔符
+
+11. os.linesep #换行分隔符
+
+12. os.pathsep  #输出用于分割文件路径的字符串
+
+13. os.environ #获取系统环境变量
+
+14. os.path.abspath(path) #返回path规范化的绝对路径
+
+15. os.path.split(path)  # 将path分割成目录和文件名二元组返回
+
+16. os.path.dirname(path)  返回path的目录。其实就是os.path.split(path)的第一个元素
 ```
