@@ -341,9 +341,35 @@ time.struct_time(tm_year=2018, tm_mon=3, tm_mday=21, tm_hour=18, tm_min=59, tm_s
 
 6. time.mktime()# struct time格式转化成时间戳
 
-7. time.shrifttime()
+7. time.shrifttime() #strftime(format[, tuple]) -> string
 >>> time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  
 '2018-03-21 19:21:12'#将struct time格式转化为自定义格式的字符串
 
-8
+8. strptime(string, format) -> struct_time  # 将字符串转化为struct time，string要和format定义的格式一一对应
 
+9. time.asctime() # tuple -> string，默认返回当前时间'Wed Mar 21 19:29:14 2018'
+
+10. time.ctime() # 时间戳 -> string
+```
+- random模块
+```
+1. random.random() #返回0-1的浮点数,random.uniform()可以指定区间
+2. random.randint(1,3) #随机1-3整数
+3. random.randrange(1,10) # 1-9整数，不包含10
+4. random.choice()
+5. random.sample()
+6. random.shuffle() #洗牌
+
+# 生成随机验证码
+verify_code=''
+for i in range(4):
+    current = random.randrange(1,10)
+    if i != current:
+        temp = chr(random.randrange(65,90))
+    else:
+        temp = random.randint(0,9)
+
+    verify_code+=str(temp)
+
+print(verify_code)
+```
