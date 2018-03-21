@@ -325,3 +325,25 @@ any thing
 3
 5
 ```
+###模块
+-time模块
+```
+1. time.time()# 时间戳，当前时间减去1970年1月1日，并换算为秒
+
+2. time.localtime() #返回当地时间，stuct time格式
+time.struct_time(tm_year=2018, tm_mon=3, tm_mday=21, tm_hour=18, tm_min=59, tm_sec=57, tm_wday=2, tm_yday=80, tm_isdst=0) #dst为夏令时，0为不是夏令时
+
+3. time.timezone() #当地时间与utc标准时间的差值
+
+4. time.sleep() #睡几秒
+
+5. time.gmtime() #参数为秒, 时间戳转化成struct time格式 
+
+6. time.mktime()# struct time格式转化成时间戳
+
+7. time.shrifttime()
+>>> time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  
+'2018-03-21 19:21:12'#将struct time格式转化为自定义格式的字符串
+
+8
+
