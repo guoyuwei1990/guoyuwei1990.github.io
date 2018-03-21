@@ -417,6 +417,8 @@ print(verify_code)
 re.match() #从开头搜索
 re.seatch() #匹配包含
 re.findall #把所有匹配到的字符放到以列表中的元素返回
+re.splitall #以匹配到的字符当做列表分隔符
+re.sub      #匹配字符并替换
 
 
 '.'     默认匹配除\n之外的任意一个字符
@@ -463,4 +465,13 @@ re.findall #把所有匹配到的字符放到以列表中的元素返回
 # '(?P<name>...)' 分组匹配
 >>> re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{4})","371481199306143242").groupdict("city")	      
 {'province': '3714', 'city': '81', 'birthday': '1993'}
+
+>>> re.split("[0-9]+","12Ch123rismas23")	      
+['', 'Ch', 'rismas', '']
+
+>>> re.sub("[0-9]+","|","12Ch123rismas23")	      
+'|Ch|rismas|'
+>>> re.sub("[0-9]+","|","12Ch123rismas23", count=2) #只换前两个
+'|Ch|rismas23'
+
 ```
