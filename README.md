@@ -408,4 +408,7 @@ print(verify_code)
 15. os.path.split(path)  # 将path分割成目录和文件名二元组返回
 
 16. os.path.dirname(path)  返回path的目录。其实就是os.path.split(path)的第一个元素
+
+17 os.name  # 输出字符串指示当前使用平台,win->'nt'; Linux->'posix'
+
 ```
