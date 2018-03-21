@@ -412,3 +412,54 @@ print(verify_code)
 17 os.name  # 输出字符串指示当前使用平台,win->'nt'; Linux->'posix'
 
 ```
+- 正则表达式re模块
+```
+re.match() #从开头搜索
+re.seatch() #匹配包含
+re.findall #把所有匹配到的字符放到以列表中的元素返回
+
+
+'.'     默认匹配除\n之外的任意一个字符
+'^'     匹配字符开头
+'$'     匹配字符结尾
+'+'     匹配前一个字符1次或多次
+'?'     匹配前一个字符1次或0次
+'{m}'   匹配前一个字符m次
+'|'     匹配|左或|右的字符
+'(...)' 分组匹配
+
+'\A'    只从字符开头匹配，re.search("\Aabc","alexabc") 是匹配不到的
+'\Z'    匹配字符结尾，同$
+'\d'    匹配数字0-9
+'\D'    匹配非数字
+'\w'    匹配[A-Za-z0-9]
+'\W'    匹配非[A-Za-z0-9]
+'s'     匹配空白字符、\t、\n、\r , re.search("\s+","ab\tc1\n3").group() 结果 '\t'
+
+>>> re.search("^C.","Ch123rismas23")
+'Ch'
+
+>>> re.search("^C.+","Ch123rismas23")
+'Ch123rismas23'
+
+>>> re.search("^C+","Ch123rismas23")
+'C'
+
+>>> re.search("[0-9]{3}","Ch123rismas23")
+'123'
+
+>>> re.findall("[0-9]{2,3}","Ch123rismas23")
+['123', '23']
+
+>>> re.search("abc|ABC","ABCBabcCD")
+'ABC' #返回先匹配到
+
+>>> re.search("abc{2}","abcabccab")
+'abcc' #匹配c两次
+
+>>> re.search("(abc){2}","abcabccab")
+'abcabc' #匹配abc两次
+
+# '(?P<name>...)' 分组匹配
+>>> re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{4})","371481199306143242").groupdict("city")	      
+{'province': '3714', 'city': '81', 'birthday': '1993'}
