@@ -395,7 +395,7 @@ print(verify_code)
 
 9. os.rename("oldname","newname") #重命名文件/目录
 
-10. os.sep  #操作系统的路径分隔符
+10. os.sep  #操作系统的路径分隔符，win下为"\\",Linux下为"/"
 
 11. os.linesep #换行分隔符
 
@@ -403,7 +403,7 @@ print(verify_code)
 
 13. os.environ #获取系统环境变量
 
-14. os.path.abspath(path) #返回path规范化的绝对路径
+14. os.path.abspath(path) #返回path规范化的绝对路径(从根开始，Linux中只要以“/”开头就是绝对路径)
 
 15. os.path.split(path)  # 将path分割成目录和文件名二元组返回
 
