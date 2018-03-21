@@ -463,3 +463,4 @@ re.findall #把所有匹配到的字符放到以列表中的元素返回
 # '(?P<name>...)' 分组匹配
 >>> re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{4})","371481199306143242").groupdict("city")	      
 {'province': '3714', 'city': '81', 'birthday': '1993'}
+```
