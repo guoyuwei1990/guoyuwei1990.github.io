@@ -489,7 +489,7 @@ class nba_player: #定义类
         print("nice pass by %s"%self.name)
 
 
-p1 = nba_player('Wade', 3) #实例化，实例化时python会自动把p1通过self参数传进去
+p1 = nba_player('Wade', 3) #调用类即实例化，实例化时python会自动把p1通过self参数传进去
 p2 = nba_player('Curry',30)
 print(p1)
 print(p1.assist()) #等价于nba_player.assist(p1)
@@ -506,3 +506,21 @@ print(p2.score(3))
 1. 类变量存在类的内存里,不实例话也可以直接调用。共同的属性
 2. 实例化时，先找实例变量，没有再找类变量
 - 析构函数：在实例释放或销毁执行，通常做一些收尾工作，如关闭一些数据库链接，打开的临时文件
+- 私有属性与私有方法
+```
+class nba_player:
+    def __init__(self,name,number):
+        self.name = name
+        self.__number = number #私有属性
+
+    def score(self,score_get):#私有方法：def __score(self,score_get): 无法访问
+        print("%s(#%s) shoot....%spoints!!!"%(self.name,self.__number,score_get))
+    def assist(self):
+        print("nice pass by %s"%self.name)
+
+p3 = nba_player('Jordan',23)
+
+#p3.number无法访问，找不到number，私有属性外面访问不了
+p3.score(60) #类的里面可以访问
+```
+
