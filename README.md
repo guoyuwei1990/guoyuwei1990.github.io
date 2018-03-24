@@ -505,6 +505,48 @@ print(p2.score(3))
 # 2. 调用nba_class这个类并执行其中的__init__(…)方法, 将p1与'Wade', 3关联起来。即nba_player.____init__(p1,'Wade', 3).
 #    self.name = name , self.number = number 就是要把这几个值存到p1的内存空间里。
 ```
+
+- Inheritance 继承:
+一个类可以派生出子类，在这个父类里定义的属性、方法自动被子类继承.广度优先继承策略。
+```
+class people:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def eat(self):
+        print('%s is eating'%self.name)
+
+    def sleep(self):
+        print('%s is sleeping'%self.name)
+
+    def laugh(self):
+        print('%s is laughing'%self.name)
+
+
+
+class man(people): #继承
+   def __init__(self,name,age,feature):
+      people.__init__(self,name,age)#沿用父类的初始化属性，也可以'super(man,self).__init__(name,age)'
+      self.feature = feature #新增的属性
+      print('%s has %s'%(self.name,self.feature))
+
+   def smoke(self):
+        print('%s is smoking'%self.name)
+
+class wonmen(people):
+    def shopping(self):
+        print("%s is shopping"%self.name)
+
+m1 = man('Sherlock','36','mustache')
+print(m1.sleep()) #继承的父类方法
+print(m1.smoke()) #子类的方法
+
+w1 = wonmen('Kate','24')
+print(w1.shopping())
+```
+
+
 - 类变量与实例变量
 1. 类变量存在类的内存里,不实例话也可以直接调用。共同的属性
 2. 实例化时，先找实例变量，没有再找类变量
