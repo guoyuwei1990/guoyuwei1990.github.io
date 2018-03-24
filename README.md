@@ -475,3 +475,30 @@ re.sub      #匹配字符并替换
 '|Ch|rismas23'
 
 ```
+### 面向对象
+###### 类
+```
+class nba_player: #定义类
+    def __init__(self,name,number): #初始化函数，初始化的一些属性就填写在这里。其中，self代表实例本身。
+        self.name = name #实例变量（静态属性），作用域为实例本身。
+        self.number = number
+
+    def score(self,score_get): #类的方法（动态属性），其实就是功能
+        print("%s(#%s) shoot....%spoints!!!"%(self.name,self.number,score_get))
+    def assist(self):
+        print("nice pass by %s"%self.name)
+
+
+p1 = nba_player('Wade', 3) #实例化，实例化时python会自动把p1通过self参数传进去
+p2 = nba_player('Curry',30)
+print(p1)
+print(p1.assist()) #等价于nba_player.assist(p1)
+print(p1.score(2+1))
+print(p2.assist())
+print(p2.score(3))
+
+# 当执行p1 = nba_player('Wade', 3)，即实例化时，python的解释器其实干了两件事：：
+# 1. 在内存中开辟一块空间指向p1这个变量名。
+# 2. 调用nba_class这个类并执行其中的__init__(…)方法, 将p1与'Wade', 3关联起来。即nba_player.____init__(p1,'Wade', 3).
+#    self.name = name , self.number = number 就是要把这几个值存到p1的内存空间里。
+```
