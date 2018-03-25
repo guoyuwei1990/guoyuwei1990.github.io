@@ -569,7 +569,7 @@ p3 = nba_player('Jordan',23)
 p3.score(60) #类的里面可以访问
 ```
 - 静态方法
-
+通过@staticmethod装饰器实现静态方法。静态方法名义上归类管理，不可以访问实例或类变的任何属性
 ```
 class nba_player:
 
@@ -607,5 +607,74 @@ class nba_player:
 p = nba_player('Wade')
 p.score(3)
 ```
+- 类方法
+类方法通过@classmethod装饰器实现。类方法只能访问类变量，不能访问实例变量
+```
+class nba_player:
 
+    def __init__(self,name):
+        self.name = name
 
+    @ classmethod
+    def score(self,score_get):
+        print("%s shoot....%spoints!!!"%(self.name,score_get))
+
+p = nba_player('Wade')
+p.score(3)
+```
+结果报错：找不到name属性
+```
+  File "/Users/guoyuw/PycharmProjects/2018/week 6/类方法.py", line 11, in <module>
+    p.score(3)
+  File "/Users/guoyuw/PycharmProjects/2018/week 6/类方法.py", line 8, in score
+    print("%s shoot....%spoints!!!"%(self.name,score_get))
+AttributeError: type object 'nba_player' has no attribute 'name'
+```
+再定义一个类变量name
+```
+class nba_player:
+    name = 'Kobe'
+    def __init__(self,name):
+        self.name = name
+
+    @ classmethod
+    def score(self,score_get):
+        print("%s shoot....%spoints!!!"%(self.name,score_get))
+
+p = nba_player('Wade')
+p.score(3)
+
+#结果为
+Kobe shoot....3points!!!
+```
+- 属性方法
+属性方法的作用就是通过@property把一个方法变成一个静态属性。
+```
+class nba_player:
+
+    def __init__(self,name):
+        self.name = name
+
+    @ property #把一个方法变为静态属性
+    def assist(self):
+        print("nice pass by %s" % self.name)
+
+p = nba_player('Wade')
+p.assis()
+```
+返回报错:NoneType is not callable, 此时assit已经变成一个静态属性了,不再是方法，调用已经需要()，直接p.assist就可以了
+
+```
+Traceback (most recent call last):
+  File "/Users/guoyuw/PycharmProjects/2018/week 6/属性方法.py", line 11, in <module>
+    p.assist()
+TypeError: 'NoneType' object is not callable
+```
+正常调用
+```
+p = nba_player('Wade')
+p.assist
+
+#返回结果
+nice pass by Wade
+```
