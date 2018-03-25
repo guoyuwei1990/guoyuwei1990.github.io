@@ -568,4 +568,26 @@ p3 = nba_player('Jordan',23)
 #p3.number无法访问，找不到number，私有属性外面访问不了
 p3.score(60) #类的里面可以访问
 ```
+- 静态方法
 
+```
+class nba_player:
+
+    def __init__(self,name):
+        self.name = name
+
+    @ staticmethod #静态方法,不可以访问实例变量或类变量的
+    def score(self,score_get):
+        print("%s(#%s) shoot....%spoints!!!"%(self.name,score_get))
+
+p = nba_player('Wade')
+p.score(3)
+```
+调用会出以下错误，当score变成静态方法后，再通过实例调用时就不会自动把实例本身当作一个参数传给self了。
+
+```
+Traceback (most recent call last):
+  File "/Users/guoyuw/PycharmProjects/2018/week 6/静态方法.py", line 12, in <module>
+    p.score(3)
+TypeError: score() missing 1 required positional argument: 'score_get'
+```
