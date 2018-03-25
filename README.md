@@ -591,3 +591,21 @@ Traceback (most recent call last):
     p.score(3)
 TypeError: score() missing 1 required positional argument: 'score_get'
 ```
+两种方法调用
+1. 调用时主动传递实例本身给score方法，即p.eat(p) 
+2. 在score方法中去掉self参数，但这也意味着，在score中不能通过self.调用实例中的其它变量了
+```
+class nba_player:
+
+    def __init__(self,name):
+        self.name = name
+
+    @ staticmethod #静态方法,不可以访问实例变量或类变量的
+    def score(score_get): # 跟类本身没有什么关系，它与类唯一的关联就是需要通过类名来调用这个方法
+        print("%s shoot....%spoints!!!"%('Wade',score_get))
+
+p = nba_player('Wade')
+p.score(3)
+```
+
+
