@@ -569,7 +569,7 @@ p3 = nba_player('Jordan',23)
 p3.score(60) #类的里面可以访问
 ```
 - 静态方法
-通过@staticmethod装饰器实现静态方法。静态方法名义上归类管理，不可以访问实例或类变的任何属性
+##### 通过@staticmethod装饰器实现静态方法。静态方法名义上归类管理，不可以访问实例或类变的任何属性
 ```
 class nba_player:
 
@@ -608,7 +608,7 @@ p = nba_player('Wade')
 p.score(3)
 ```
 - 类方法
-类方法通过@classmethod装饰器实现。类方法只能访问类变量，不能访问实例变量
+##### 类方法通过@classmethod装饰器实现。类方法只能访问类变量，不能访问实例变量
 ```
 class nba_player:
 
@@ -648,7 +648,7 @@ p.score(3)
 Kobe shoot....3points!!!
 ```
 - 属性方法
-属性方法的作用就是通过@property把一个方法变成一个静态属性。
+##### 属性方法的作用就是通过@property把一个方法变成一个静态属性。
 ```
 class nba_player:
 
