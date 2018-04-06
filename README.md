@@ -850,4 +850,8 @@ a[0,0]=123 #改变a的第一个元素
  [  4   5   6   7]
  [  8   9  10  11]]
  ```
- 
+### pandas
+```
+import pandas as pd
+import numpy as np # 一般将numpy和pandas配合使用
+s = pd.Series([1,2,6,np.nan,44,1])
