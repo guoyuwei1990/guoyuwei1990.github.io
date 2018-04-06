@@ -679,6 +679,7 @@ p.assist
 nice pass by Wade
 ```
 ### Numpy
+- numpy创建array
 ```
 >>> import numpy as np #导入numpy
 >>> a = np.array([[1,2,3],
@@ -698,4 +699,18 @@ nice pass by Wade
  # arange相当于python中的range
  >>> a = np.arange(2,20,2)#生成2到20之间，步长为2的数列
  [ 2  4  6  8 10 12 14 16 18]
- 
+# 通过reshape可以定义矩阵的行列数
+>>> a = np.arange(12).reshape(3,4)
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+ # 生成线段 linspace
+ >>> a = np.linspace(1,10,5) #从1开始到10，步长为20的线段
+[ 1.    3.25  5.5   7.75 10.  ]
+# 可以reshape
+>>> a = np.linspace(1,10,6).reshape(2,3)
+[[ 1.   2.8  4.6]
+ [ 6.4  8.2 10. ]]
+```
+- numpy的基础运算
+```
