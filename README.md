@@ -678,3 +678,24 @@ p.assist
 #返回结果
 nice pass by Wade
 ```
+### Numpy
+```
+>>> import numpy as np #导入numpy
+>>> a = np.array([[1,2,3],
+             [4,5,6]])
+>>> print(a)
+[[1 2 3]
+ [4 5 6]] 
+>>> a = np.ones((3,4))#生成全部为1，三行四列的矩阵
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+# 可以通过dtype定义元素类型
+>>> a = np.ones((3,4),dtype=np.int64)
+[[1 1 1 1]
+ [1 1 1 1]
+ [1 1 1 1]]
+ # arange相当于python中的range
+ >>> a = np.arange(2,20,2)#生成2到20之间，步长为2的数列
+ [ 2  4  6  8 10 12 14 16 18]
+ 
