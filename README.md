@@ -765,6 +765,7 @@ a.T #a的转置
  [[ 3  4  5  6]
  [ 7  8  9 10]
  [11 12 13 14]]
+ 
  >>> print(a[2])#返回第三行
  [11 12 13 14]
 >>> print(a[1][1]) #返回第二行第二列，也可以a[1,1]
@@ -776,3 +777,39 @@ a.T #a的转置
 [[ 4  5]
  [ 8  9]
  [12 13]]
+
+# 打印出每一行
+for row in a:
+    print(row)
+
+# 打印每一列
+for column in a.T:
+    print(column)
+# 打印每一个元素
+for item in a.flat:
+    print(item)
+```
+4. 合并
+```
+>>> import numpy as np
+    a = np.array([1,1,1])
+    b = np.array([2,2,2])
+    c = np.vstack((a,b)) #a,b纵向合并
+[[1 1 1]
+ [2 2 2]] 
+
+>>> np.hstack((a,b)) #横向合并
+[1 1 1 2 2 2]    
+ #把横向的数列转为纵向
+ c = a.reshape(a.size,1)
+ # newaxis可以增加纬度
+ a[:,np.newaxis] #纵向增加纬度
+ [[1]
+ [1]
+ [1]]
+>>> a = np.array([1,1,1])[:,np.newaxis]
+    b = np.array([2,2,2])[:,np.newaxis]
+    print(np.hstack((a,b)))
+[[1 2]
+ [1 2]
+ [1 2]]
