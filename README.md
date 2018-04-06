@@ -800,8 +800,10 @@ for item in a.flat:
 
 >>> np.hstack((a,b)) #横向合并
 [1 1 1 2 2 2]    
+ 
  #把横向的数列转为纵向
  c = a.reshape(a.size,1)
+ 
  # newaxis可以增加纬度
  a[:,np.newaxis] #纵向增加纬度
  [[1]
@@ -813,6 +815,12 @@ for item in a.flat:
 [[1 2]
  [1 2]
  [1 2]]
+
+# 通常用concatenate来替代vstack和hstack，进行多项的合并
+>>> c = np.concatenate((a,b,a), axis=1) #纵向合并a，b，a
+[[1 2 1]
+ [1 2 1]
+ [1 2 1]]
 ```
 - 分割
 ```
