@@ -814,3 +814,22 @@ for item in a.flat:
  [1 2]
  [1 2]]
 ```
+
+
+- copy
+```
+import numpy as np
+a = np.arange(12).reshape(3,4)
+b=a.copy() #deep copy
+c = a
+a[0,0]=123 #改变a的第一个元素
+# b中元素不变
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+# c中第一个元素随之改变
+[[123   1   2   3]
+ [  4   5   6   7]
+ [  8   9  10  11]]
+ ```
+ 
