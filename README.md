@@ -814,7 +814,17 @@ for item in a.flat:
  [1 2]
  [1 2]]
 ```
-
+- 分割
+```
+# split
+import numpy as np
+a = np.arange(12).reshape(3,4)
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+c = np.split(a,2,axis=1) #将c按纵向分为两块，axis = 0为横向分割
+# 如果是想将4列分为三块，用np.array_split(a,3,axis=1)
+```
 
 - copy
 ```
