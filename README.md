@@ -759,7 +759,7 @@ a.T #a的转置
  [6 6 6 6]
  [6 6 6 6]]
  ```
- 3. 索引
+ - 索引
  ```
  >>> a = np.arange(3,15)
  [[ 3  4  5  6]
@@ -789,7 +789,7 @@ for column in a.T:
 for item in a.flat:
     print(item)
 ```
-4. 合并
+- 合并
 ```
 >>> import numpy as np
     a = np.array([1,1,1])
@@ -813,3 +813,4 @@ for item in a.flat:
 [[1 2]
  [1 2]
  [1 2]]
+```
